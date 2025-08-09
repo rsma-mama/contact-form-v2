@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class AuthController extends Controller
+{
+    // 登録フォームの表示
+    public function register()
+    {
+        // ビューに渡す変数を用意（必要なければ削除してもOK）
+        $content = "ユーザー登録フォーム";
+
+        // auth/register.blade.php に$contentを渡す
+        return view('auth.register', compact('content'));
+    }
+
+    // 登録処理（例）
+    public function create(Request $request)
+    {
+        // バリデーションや登録処理を書く場所
+        // ここでは簡単にリダイレクトだけ書きます
+
+        return redirect('/');
+    }
+}
